@@ -21,8 +21,8 @@ MODEL_ID   = os.getenv("MODEL_ID", "us.anthropic.claude-3-7-sonnet-20250219-v1:0
 GATEWAY_URL = os.getenv("GATEWAY_URL", "https://travel-agent-gateway-ugbk5bivzz.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp")
 GATEWAY_ACCESS_TOKEN = os.getenv("GATEWAY_ACCESS_TOKEN", "")
 COGNITO_TOKEN_URL = os.getenv("COGNITO_TOKEN_URL", "https://my-domain-grsxuvl5.auth.us-east-1.amazoncognito.com/oauth2/token")
-COGNITO_CLIENT_ID = os.getenv("COGNITO_CLIENT_ID", "25asgubgeoi71fqoflug78q2fm")
-COGNITO_CLIENT_SECRET = os.getenv("COGNITO_CLIENT_SECRET", "paedup9dujb1viei493o1n4m7v0fnu6jtqu9qqc2sa0j2q60og3")
+COGNITO_CLIENT_ID = os.getenv("COGNITO_CLIENT_ID", "your_client_id")
+COGNITO_CLIENT_SECRET = os.getenv("COGNITO_CLIENT_SECRET", "your_client_secret")
 COGNITO_SCOPE = os.getenv("COGNITO_SCOPE", "")
 
 HTTP_MAX_CALLS = int(os.getenv("HTTP_MAX_CALLS", "8"))
