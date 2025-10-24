@@ -1,0 +1,38 @@
+default_agent: app
+agents:
+  app:
+    name: app
+    entrypoint: app.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::359077243653:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-a172cedcae
+      execution_role_auto_create: false
+      account: '359077243653'
+      region: us-east-1
+      ecr_repository: 359077243653.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-app
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: app-64GMZF2awC
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:359077243653:runtime/app-64GMZF2awC
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-app-builder
+      execution_role: arn:aws:iam::359077243653:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-a172cedcae
+      source_bucket: bedrock-agentcore-codebuild-sources-359077243653-us-east-1
+    memory:
+      mode: STM_AND_LTM
+      memory_id: app_mem-UCy7NQEmlp
+      memory_arn: null
+      memory_name: app_memory
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
